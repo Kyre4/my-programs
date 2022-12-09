@@ -1,0 +1,68 @@
+from random import *
+
+# rock, paper, scissors
+forms = ["r", "p", "s"]
+
+
+# Player selection
+def player_select():
+    select = False
+    
+    while select == False:
+        player = input("Choose rock(r), paper(p) or scissors(s).").lower()
+        if player == "r" or player == "p" or player == "s":
+            select = True
+        else:
+            print("Please, select a correct option.")
+            
+    return player
+
+# IA selection
+def ia_select():
+    select = choice(forms)
+    return select
+    
+# Starting Match
+ia_points = 0
+player_points = 0
+game_over = False
+
+while game_over == False:
+    ia = ia_select()
+    player = player_select()
+    print("\n" + "*" * 20)
+    if player == "r" and ia == "r":
+        print(f"IA chooses Rock. It's a draw\nPlayer {player_points} - {ia_points} IA")
+    elif player == "p" and ia == "p":
+        print(f"IA chooses Paper. It's a draw\nPlayer {player_points} - {ia_points} IA")
+    elif player == "s" and ia == "s":
+        print(f"IA chooses Scissors. It's a draw\nPlayer {player_points} - {ia_points} IA")
+
+    elif player == "r" and ia == "p":
+        ia_points += 1
+        print(f"IA chooses Paper. You lose.\nPlayer {player_points} - {ia_points} IA")
+    elif player == "p" and ia == "s":
+        ia_points += 1
+        print(f"IA chooses Scissors. You lose.\nPlayer {player_points} - {ia_points} IA")
+    elif player == "s" and ia == "r":
+        ia_points += 1
+        print(f"IA chooses Rock. You lose.\nPlayer {player_points} - {ia_points} IA")       
+    
+    elif player == "p" and ia == "r":
+        player_points += 1
+        print(f"IA chooses Rock. You win.\nPlayer {player_points} - {ia_points} IA")
+    elif player == "s" and ia == "p":
+        player_points += 1
+        print(f"IA chooses Paper. You win.\nPlayer {player_points} - {ia_points} IA")   
+    elif player == "r" and ia == "s":
+        player_points += 1
+        print(f"IA chooses Scissors. You win.\nPlayer {player_points} - {ia_points} IA")       
+    
+    print("*" * 20 + "\n")
+    
+    if ia_points == 3:
+        game_over = True
+        print("\nIA defeats you...\nGAME OVER")
+    elif player_points == 3:
+        game_over = True
+        print("\nCongratulations, you defeat IA!")
