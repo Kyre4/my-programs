@@ -66,3 +66,4 @@ while game_over == False:
     elif player_points == 3:
         game_over = True
         print("\nCongratulations, you defeat IA!")
+        
