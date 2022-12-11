@@ -9,10 +9,10 @@ cookie_msgs = [f"Delight the world with compassion, kindness and grace", "The ea
                 "Tension is who you think you should be. Relaxation is who you are.", "When blind leading the blind……..get out of the way.",
                 "Everyone seems normal until you get to know them.", "Only difference between rut and a grave is depth."]
                 
-def select_cookie(cookie_msgs):
+def open_cookie():
     "Function to choose random message"
     message = choice(cookie_msgs)
-    return message
+    print(message)
     
 def y_n(question):
     "I create this function for accept only 'y' or 'n' as an correct answer"
@@ -21,20 +21,26 @@ def y_n(question):
     else: 
         return False
 
-def open_cookie():
-    open_cookie = False
-    while open_cookie == False:
-        welcome = input("Do you want to open a Fortune Cookie? (y/n): ").lower()
-        open_cookie = y_n(welcome)
-        if open_cookie == False:
-            print("Please, enter only 'yes'(y) or 'no'(n)'")
-    if welcome == "y":
-        your_message = select_cookie(cookie_msgs)
-        print(your_message)
-    elif welcome == "n":
-        print("Okay then, have a nice day!")
+
+
+ask_open = ""
+re_open = ""
+while ask_open != "y" or ask_open != "n":
+    ask_open = input("Do you want to open a Fortune Cookie? (y/n): ").lower()
+    if ask_open == "n":
+        print("Okay then, good bye!")
         time.sleep(3)
         exit()
-
-# Welcome
-print("Hello!")
+    elif ask_open == "y":
+        open_cookie()
+        break
+while re_open != "y" or re_open != "n":
+    re_open = input("Do you want to open another Fortune Cookie? (s/n): ")
+    if re_open == "y":
+        open_cookie
+    elif re_open == "n":
+        break
+    
+    else:
+        print("Please, enter only 'yes'(y) or 'no'(n)'")
+    
