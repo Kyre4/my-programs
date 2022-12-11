@@ -18,10 +18,11 @@ while ask_roll != "y" or ask_roll != "n":
     ask_roll = input("Roll dice? (y/n): ").lower()
     if ask_roll == "y":
         roll_dice = dice_rolling(dice)
-        print(roll_dice)
+        print(f" {roll_dice}")
         continue
     if ask_roll == "n":
         print("Sad")
         time.sleep(3)
         exit()
-        
+    print("Please, type 'yes'(y) or 'no'(n)")    
+
