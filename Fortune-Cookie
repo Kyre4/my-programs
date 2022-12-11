@@ -14,24 +14,23 @@ def open_cookie():
     message = choice(cookie_msgs)
     print(message)
     
-def y_n(question):
-    "I create this function for accept only 'y' or 'n' as an correct answer"
-    if question == "y" or question == "n":
-        return True
-    else: 
-        return False
-
+    
+# Welcome
+print("Hello!")
 
 # Asking first time 
 ask_open = ""
 while ask_open != "y" or ask_open != "n":
     ask_open = input("Do you want to open a Fortune Cookie? (y/n): ").lower()
+    print("\n")
     if ask_open == "n":
         print("Okay then, good bye!")
         time.sleep(3)
         exit()
     elif ask_open == "y":
+        print("*" * 100)
         open_cookie()
+        print("*" * 100 + "\n")
         break
     
     print("Please, enter only 'yes'(y) or 'no'(n)'")
@@ -41,7 +40,9 @@ re_open = ""
 while re_open != "y" or re_open != "n":
     re_open = input("Do you want to open another Fortune Cookie? (y/n): ")
     if re_open == "y":
+        print("*" * 100)
         open_cookie()
+        print("*" * 100 + "\n")
         continue
     elif re_open == "n":
         print("Okay then, good bye!")
@@ -49,8 +50,4 @@ while re_open != "y" or re_open != "n":
         exit()
     
     print("Please, enter only 'yes'(y) or 'no'(n)'")
-    
-
-
-# Welcome
-print("Hello!")
+   
