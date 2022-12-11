@@ -1,0 +1,27 @@
+# Dice Rolling Simulator
+from random import *
+import time
+
+
+# Creating dice's numbers
+dice = [1,2,3,4,5,6]
+
+# Dice Rolling
+def dice_rolling(dice):
+    result = choice(dice)
+    return result
+
+    
+# Game
+ask_roll = ""
+while ask_roll != "y" or ask_roll != "n":
+    ask_roll = input("Roll dice? (y/n): ").lower()
+    if ask_roll == "y":
+        roll_dice = dice_rolling(dice)
+        print(roll_dice)
+        continue
+    if ask_roll == "n":
+        print("Sad")
+        time.sleep(3)
+        exit()
+        
