@@ -2,7 +2,6 @@ from random import *
 import time
 
 # Fortune cookie
-
 cookie_msgs = [f"Delight the world with compassion, kindness and grace", "The early bird gets the worm, but the second mouse gets the cheese.",
                 "Some days you are pigeon, some days you are statue. Today, bring umbrella.", "The fortune you seek is in another cookie.",
                 "Be on the alert to recognize your prime at whatever time of your life it may occur.", "Your reality check about to bounce.",
@@ -12,7 +11,7 @@ cookie_msgs = [f"Delight the world with compassion, kindness and grace", "The ea
 def open_cookie():
     "Function to choose random message"
     message = choice(cookie_msgs)
-    print(message)
+    return message
     
     
 # Welcome
@@ -28,11 +27,11 @@ while ask_open != "y" or ask_open != "n":
         time.sleep(3)
         exit()
     elif ask_open == "y":
-        print("*" * 100)
-        open_cookie()
-        print("*" * 100 + "\n")
+        message = open_cookie()
+        print("*" * len(message))
+        print(message)
+        print("*" * len(message) + "\n")
         break
-    
     print("Please, enter only 'yes'(y) or 'no'(n)'")
     
 # Asking for repeating times
@@ -40,14 +39,14 @@ re_open = ""
 while re_open != "y" or re_open != "n":
     re_open = input("Do you want to open another Fortune Cookie? (y/n): ")
     if re_open == "y":
-        print("*" * 100)
-        open_cookie()
-        print("*" * 100 + "\n")
+        message = open_cookie()
+        print("*" * len(message))
+        print(message)
+        print("*" * len(message) + "\n")
         continue
     elif re_open == "n":
         print("Okay then, good bye!")
         time.sleep(3)
         exit()
-    
     print("Please, enter only 'yes'(y) or 'no'(n)'")
-   
+    
