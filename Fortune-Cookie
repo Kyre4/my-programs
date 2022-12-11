@@ -13,17 +13,21 @@ def select_cookie(cookie_msgs):
     "Function to choose random message"
     message = choice(cookie_msgs)
     return message
-
+    
+def y_n(question):
+    if question == "y" or question == "n":
+        return True
+    else: 
+        return False
 
 # Welcome
 print("Hello!")
 welcome_ok = False
 while welcome_ok == False:
     welcome = input("Do you want to open a Fortune Cookie? (y/n): ").lower()
-    if welcome == "y" or welcome == "n":
-        welcome_ok = True
-    elif welcome != "y" or welcome != "n":
-        print("Please, enter 'yes'(y) or 'no'(n) ")
+    welcome_ok = y_n(welcome)
+    print("Please, enter only 'yes'(y) or 'no'(n)'")
+    
         
 if welcome == "y":
     your_message = select_cookie(cookie_msgs)
