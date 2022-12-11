@@ -39,11 +39,14 @@ while ask_open != "y" or ask_open != "n":
 # Asking for repeating times
 re_open = ""    
 while re_open != "y" or re_open != "n":
-    re_open = input("Do you want to open another Fortune Cookie? (s/n): ")
+    re_open = input("Do you want to open another Fortune Cookie? (y/n): ")
     if re_open == "y":
-        open_cookie
+        open_cookie()
+        continue
     elif re_open == "n":
-        break
+        print("Okay then, good bye!")
+        time.sleep(3)
+        exit()
     
     print("Please, enter only 'yes'(y) or 'no'(n)'")
     
