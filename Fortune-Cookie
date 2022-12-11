@@ -15,6 +15,7 @@ def select_cookie(cookie_msgs):
     return message
     
 def y_n(question):
+    "I create this function for accept only 'y' or 'n' as an correct answer"
     if question == "y" or question == "n":
         return True
     else: 
