@@ -21,20 +21,20 @@ def y_n(question):
     else: 
         return False
 
+def open_cookie():
+    open_cookie = False
+    while open_cookie == False:
+        welcome = input("Do you want to open a Fortune Cookie? (y/n): ").lower()
+        open_cookie = y_n(welcome)
+        if open_cookie == False:
+            print("Please, enter only 'yes'(y) or 'no'(n)'")
+    if welcome == "y":
+        your_message = select_cookie(cookie_msgs)
+        print(your_message)
+    elif welcome == "n":
+        print("Okay then, have a nice day!")
+        time.sleep(3)
+        exit()
+
 # Welcome
 print("Hello!")
-welcome_ok = False
-while welcome_ok == False:
-    welcome = input("Do you want to open a Fortune Cookie? (y/n): ").lower()
-    welcome_ok = y_n(welcome)
-    print("Please, enter only 'yes'(y) or 'no'(n)'")
-    
-        
-if welcome == "y":
-    your_message = select_cookie(cookie_msgs)
-    print(your_message)
-elif welcome == "n":
-    print("Okay then, have a nice day!")
-    time.sleep(3)
-    exit()
-    
