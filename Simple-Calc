@@ -1,0 +1,55 @@
+# Simple calculator
+
+# Creating functions
+def addition(a, b):
+    result = a + b
+    print(f"{a} + {b} = {result}")
+    
+def subtraction(a, b):
+    result = a - b
+    print(f"{a} - {b} = {result}")
+    
+def multiplication(a, b):
+    result = a * b
+    print(f"{a} * {b} = {result}")
+    
+def division(a, b):
+    result = a / b
+    print(f"{a} / {b} = {result}")
+    
+# Program loop
+while True:
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Exit")
+    choice = int(input("Select an operation: "))
+
+    if choice == 1:
+        a = int(input("Input first number: "))
+        b = int(input("Input second number: "))
+        addition(a,b)
+        print("\n")
+    elif choice == 2:
+        a = int(input("Input first number: "))
+        b = int(input("Input second number: "))
+        subtraction(a,b)
+        print("\n")
+    elif choice == 3:
+        a = int(input("Input first number: "))
+        b = int(input("Input second number: "))
+        multiplication(a,b)
+        print("\n")
+    elif choice == 4:
+        a = int(input("Input first number: "))
+        b = int(input("Input second number: "))
+        if b == 0:
+            print("You can't divide by 0")
+        else:
+            division(a,b)
+        print("\n")
+    elif choice == 5:
+        exit()
+
+    
